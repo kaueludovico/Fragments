@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_example.*
 
 class ExampleFragment : Fragment(R.layout.fragment_example) {
 
@@ -12,13 +13,19 @@ class ExampleFragment : Fragment(R.layout.fragment_example) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-//        var name = requireArguments().getString("NAME_USER")
-//        var age = requireArguments().getInt("AGE_USER")
+        val user = requireArguments().getSerializable("USER") as User
 
-        var user = requireArguments().getSerializable("USER") as User
+        println("Nome: ${user.name}, \nIdade: ${user.age} ")
 
-//        println("$name , $age <<<<<<<<<<<")
-        println("${user.name} ${user.age} <<<<<<<<")
+        getData(user)
+    }
+
+
+    fun getData(user: User) {
+        Thread(Runnable {
+            Thread.sleep(1000)
+            textView.text = "${user.name} ${user.age}"
+        }).start()
 
     }
 

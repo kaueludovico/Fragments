@@ -35,9 +35,15 @@ class MainActivity : AppCompatActivity() {
 
     private fun callFragment2() {
         findViewById<Button>(R.id.fragment2).setOnClickListener {
+
+            val bundle = bundleOf(
+                "USER_NAME" to "kaueludovico",
+                "USER_AGE" to 22
+            )
+
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add<SecondExampleFragment>(R.id.fragmentContainerView)
+                add<SecondExampleFragment>(R.id.fragmentContainerView, args = bundle)
             }
         }
     }
