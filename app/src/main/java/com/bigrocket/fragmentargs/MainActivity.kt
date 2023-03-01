@@ -17,6 +17,15 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
+    private fun callFirstFragment() {
+        findViewById<Button>(R.id.fragment1).setOnClickListener {
+            supportFragmentManager.commit {
+                setReorderingAllowed(true)
+                add<FirstFragment>(R.id.fragmentContainerView)
+            }
+        }
+    }
+
     private fun callSecondFragment() {
         findViewById<Button>(R.id.fragment2).setOnClickListener {
             supportFragmentManager.commit {
@@ -26,12 +35,5 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun callFirstFragment() {
-        findViewById<Button>(R.id.fragment1).setOnClickListener {
-            supportFragmentManager.commit {
-                setReorderingAllowed(true)
-                add<FirstFragment>(R.id.fragmentContainerView)
-            }
-        }
-    }
+
 }
