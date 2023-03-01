@@ -4,9 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import androidx.core.os.bundleOf
-import androidx.core.os.persistableBundleOf
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
+import com.bigrocket.fragments.model.User
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add<ExampleFragment>(R.id.fragmentContainerView, args = bundle)
+                add<FirstFragment>(R.id.fragmentContainerView, args = bundle)
             }
         }
     }
@@ -43,7 +43,7 @@ class MainActivity : AppCompatActivity() {
 
             supportFragmentManager.commit {
                 setReorderingAllowed(true)
-                add<SecondExampleFragment>(R.id.fragmentContainerView, args = bundle)
+                add<SecondFragment>(R.id.fragmentContainerView, args = bundle)
             }
         }
     }

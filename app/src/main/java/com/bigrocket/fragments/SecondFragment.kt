@@ -2,12 +2,10 @@ package com.bigrocket.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_example.*
+import kotlinx.android.synthetic.main.fragment_second.*
 
-class SecondExampleFragment : Fragment(R.layout.fragment_second_example) {
+class SecondFragment : Fragment(R.layout.fragment_second) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +18,10 @@ class SecondExampleFragment : Fragment(R.layout.fragment_second_example) {
         getData("$name", age)
     }
 
-    fun getData(name: String, age: Int) {
+    private fun getData(name: String, age: Int) {
         Thread(Runnable {
             Thread.sleep(1000)
-            textView.text = "$name $age"
+            textView2.text = "$name $age"
         }).start()
 
     }

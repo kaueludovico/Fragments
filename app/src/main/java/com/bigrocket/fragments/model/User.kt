@@ -1,4 +1,4 @@
-package com.bigrocket.fragments
+package com.bigrocket.fragments.model
 
 import java.io.Serializable
 

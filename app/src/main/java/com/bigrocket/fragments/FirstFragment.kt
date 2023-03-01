@@ -2,34 +2,25 @@ package com.bigrocket.fragments
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import kotlinx.android.synthetic.main.fragment_example.*
+import com.bigrocket.fragments.model.User
+import kotlinx.android.synthetic.main.fragment_first.*
 
-class ExampleFragment : Fragment(R.layout.fragment_example) {
-
+class FirstFragment : Fragment(R.layout.fragment_first) {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         val user = requireArguments().getSerializable("USER") as User
-
         println("Nome: ${user.name}, \nIdade: ${user.age} ")
 
         getData(user)
     }
 
 
-    fun getData(user: User) {
+    private fun getData(user: User) {
         Thread(Runnable {
             Thread.sleep(1000)
-            textView.text = "${user.name} ${user.age}"
+            textView1.text = "${user.name} ${user.age}"
         }).start()
-
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
     }
 }
