@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/design_default_color_secondary"
-    tools:context=".ExampleFragment">
+    android:background="@color/purple_500"
+    tools:context=".FirstFragment">
 
-
+    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/textView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Fragment 2"
-        android:textAlignment="center"
+        android:layout_height="match_parent"
+        android:text="Fragment 1"
         android:textColor="@color/white"
-        android:textSize="25sp"
+        android:textSize="30sp"
+        android:textAlignment="center"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"/>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
